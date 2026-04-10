@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<!-- 
+    PLANTILLA PARA TATUADORES - URIEL TATTOO
+    Para personalizar:
+    1. Cambiar textos en las etiquetas H1, P y SPAN.
+    2. Actualizar las variables de color en style.css (:root).
+    3. Reemplazar los placeholders de imagen.
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uriel Tattoo | Tatuajes en Santiago Centro | Estudio de Tatuajes Profesional</title>
+    <meta name="description" content="Uriel Tattoo: Estudio de tatuajes profesional en Santiago Centro, RM. Especialista en realismo, blackwork y fine line. Reserva tu cita hoy.">
+    <meta name="keywords" content="tatuajes santiago centro, tatuador santiago, estudio tatuajes chile, realismo, blackwork, fine line, uriel tattoo">
+    
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Uriel Tattoo | Tatuajes en Santiago Centro">
+    <meta property="og:description" content="Arte en la piel con los más altos estándares de calidad y seguridad en Santiago de Chile.">
+    <meta property="og:image" content="https://ejemplo.com/og-image.jpg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cursor interactive glow -->
+    <div id="cursor-glow" aria-hidden="true"></div>
+
+    <!-- Noise texture overlay -->
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- Header / Nav -->
+    <header id="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="#hero"><img src="logo.png" alt="Uriel Tattoo"></a>
+            </div>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#about">Sobre mí</a></li>
+                    <li><a href="#portfolio">Portafolio</a></li>
+                    <li><a href="#designs">Diseños</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#booking-form" class="cta-nav">Reservar cita</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="#booking-form" class="btn btn-secondary">Reservar cita</a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-nav-toggle" aria-controls="navbar" aria-expanded="false">
+                <span class="sr-only">Menú</span>
+                <div class="hamburger"></div>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero -->
+        <section id="hero" class="section">
+            <div class="hero-bg-pattern" aria-hidden="true"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <span class="hero-eyebrow reveal">Tatuador Profesional · Santiago Centro</span>
+                        <h1 class="reveal reveal-delay-1">Tatuajes que<br><em>no se olvidan.</em></h1>
+                        <p class="subtitle reveal reveal-delay-2">Diseñados para quedarse contigo.</p>
+                    </div>
+                    <div class="hero-video reveal reveal-delay-3">
+                        <div class="video-container">
+                            <video src="videos/optimized/mars-attack.m4v" autoplay loop muted playsinline></video>
+                            <div class="media-accent-line media-accent-line--bl" aria-hidden="true"></div>
+                        </div>
+                    </div>
+                    <div class="hero-scroll-hint" aria-hidden="true">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Sobre mí -->
+        <section id="about" class="section">
+            <div class="container grid-2">
+                <div class="about-image reveal">
+                    <img src="sobre-mi.PNG" alt="Uriel Ibarra Reyes - Tatuador" class="about-img-main">
+                    <div class="media-accent-line media-accent-line--bl" aria-hidden="true"></div>
+                </div>
+                <div class="about-text">
+                    <div class="section-header reveal">
+                        <span class="eyebrow">Uriel Ibarra Reyes</span>
+                        <h2 class="section-title">Sobre mí</h2>
+                    </div>
+                    <div class="about-bio reveal reveal-delay-2">
+                        <p>Tatuador con 15 años de experiencia, especializado en el desarrollo de diseños personalizados y en la exploración constante de distintos estilos de tatuaje. Mi enfoque siempre ha sido combinar técnica, creatividad y adaptación a cada proyecto, entendiendo el tatuaje como una pieza única pensada para cada persona.</p>
+                        
+                        <p>A lo largo de mi trayectoria he trabajado creando propuestas visuales originales, priorizando el diseño previo y la construcción estética de cada trabajo. Actualmente trabajo en Santiago, en el sector cercano a Metro Moneda, atendiendo proyectos personalizados y colaborando directamente con cada cliente desde la idea inicial hasta el resultado final.</p>
+                        
+                        <p>Sigo entendiendo el tatuaje como un proceso evolutivo: aprendizaje continuo, búsqueda artística y compromiso con la calidad en cada sesión.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Portfolio -->
+        <section id="portfolio" class="section section-alt">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="eyebrow">Una selección de mis mejores tatuajes</span>
+                    <h2 class="section-title">Portafolio</h2>
+                </div>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item reveal"><div class="portfolio-item-inner"><img src="Fotos/optimized/IMG_4607.jpg" alt="Tatuaje" loading="lazy"></div><div class="media-accent-line media-accent-line--bl" aria-hidden="true"></div></div>
+                    <div class="portfolio-item reveal reveal-delay-1"><div class="portfolio-item-inner"><img src="Fotos/optimized/IMG_5214.jpg" alt="Tatuaje" loading="lazy"></div><div class="media-accent-line media-accent-line--bl" aria-hidden="true"></div></div>
+                    <div class="portfolio-item reveal reveal-delay-2"><div class="portfolio-item-inner"><img src="Fotos/optimized/IMG_6367.jpg" alt="Tatuaje" loading="lazy"></div><div class="media-accent-line media-accent-line--bl" aria-hidden="true"></div></div>
+                </div>
+                <div class="view-all-container text-center reveal reveal-delay-3" style="margin-top: 3rem;">
+                    <button class="btn btn-secondary btn-view-all" data-gallery="fotos">Ver galería completa</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Videos Destacados -->
+        <section id="featured-videos" class="section">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="eyebrow">Trabajo en Acción</span>
+                    <h2 class="section-title">Detalles capturados en movimiento</h2>
+                </div>
+                <div class="videos-grid">
+                    <div class="video-item reveal">
+                        <video src="videos/optimized/IMG_0182.m4v" autoplay loop muted playsinline loading="lazy"></video>
+                        <div class="media-accent-line media-accent-line--bl" aria-hidden="true"></div>
+                    </div>
+                    <div class="video-item reveal reveal-delay-1">
+                        <video src="videos/optimized/IMG_2248.m4v" autoplay loop muted playsinline loading="lazy"></video>
+                        <div class="media-accent-line media-accent-line--bl" aria-hidden="true"></div>
+                    </div>
+                    <div class="video-item reveal reveal-delay-2">
+                        <video src="videos/optimized/IMG_4861.m4v" autoplay loop muted playsinline loading="lazy"></video>
+                        <div class="media-accent-line media-accent-line--bl" aria-hidden="true"></div>
+                    </div>
+                </div>
+                <div class="view-all-container text-center reveal reveal-delay-3" style="margin-top: 3rem;">
+                    <button class="btn btn-secondary btn-view-all" data-gallery="videos">Ver todos los videos</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Diseños Disponibles -->
+        <section id="designs" class="section section-alt">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="eyebrow">Disponibles ahora</span>
+                    <h2 class="section-title">Diseños listos para tatuar</h2>
+                    <p class="section-subtitle">Diseños originales con precio cerrado. Resérvalo antes de que alguien más lo haga.</p>
+                </div>
+                <div class="designs-grid">
+
+                    <article class="design-card reveal" data-design="Diseño 1" data-style="Flash" data-price="$300.000">
+                        <div class="media-accent-line media-accent-line--tr" aria-hidden="true"></div>
+                        <div class="design-card-img"><img src="diseños/optimized/IMG_1904.jpg" alt="Diseño flash" loading="lazy"></div>
+                        <div class="design-card-body">
+                            <span class="design-tag">Flash</span>
+                            <h3 class="design-name">Diseño Disponble 1</h3>
+                            <p class="design-desc">Diseño exclusivo listo para tatuar.</p>
+                            <div class="design-footer">
+                                <span class="design-price">$300.000</span>
+                                <button class="btn btn-primary btn-reserve-design" data-design="Diseño Disponible 1" data-style="Flash" data-price="$300.000">Reservar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="design-card reveal reveal-delay-1" data-design="Diseño 2" data-style="Flash" data-price="$160.000">
+                        <div class="media-accent-line media-accent-line--tr" aria-hidden="true"></div>
+                        <div class="design-card-img"><img src="diseños/optimized/IMG_1922.jpg" alt="Diseño flash" loading="lazy"></div>
+                        <div class="design-card-body">
+                            <span class="design-tag">Flash</span>
+                            <h3 class="design-name">Diseño Disponble 2</h3>
+                            <p class="design-desc">Diseño exclusivo listo para tatuar.</p>
+                            <div class="design-footer">
+                                <span class="design-price">$160.000</span>
+                                <button class="btn btn-primary btn-reserve-design" data-design="Diseño Disponible 2" data-style="Flash" data-price="$160.000">Reservar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="design-card reveal reveal-delay-2" data-design="Diseño 3" data-style="Flash" data-price="$300.000">
+                        <div class="media-accent-line media-accent-line--tr" aria-hidden="true"></div>
+                        <div class="design-card-img"><img src="diseños/optimized/IMG_1932.jpg" alt="Diseño flash" loading="lazy"></div>
+                        <div class="design-card-body">
+                            <span class="design-tag">Flash</span>
+                            <h3 class="design-name">Diseño Disponble 3</h3>
+                            <p class="design-desc">Diseño exclusivo listo para tatuar.</p>
+                            <div class="design-footer">
+                                <span class="design-price">$300.000</span>
+                                <button class="btn btn-primary btn-reserve-design" data-design="Diseño Disponible 3" data-style="Flash" data-price="$300.000">Reservar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="design-card reveal" data-design="Diseño 4" data-style="Flash" data-price="$200.000">
+                        <div class="media-accent-line media-accent-line--tr" aria-hidden="true"></div>
+                        <div class="design-card-img"><img src="diseños/optimized/IMG_1930.jpg" alt="Diseño flash" loading="lazy"></div>
+                        <div class="design-card-body">
+                            <span class="design-tag">Flash</span>
+                            <h3 class="design-name">Diseño Disponble 4</h3>
+                            <p class="design-desc">Diseño exclusivo listo para tatuar.</p>
+                            <div class="design-footer">
+                                <span class="design-price">$200.000</span>
+                                <button class="btn btn-primary btn-reserve-design" data-design="Diseño Disponible 4" data-style="Flash" data-price="$200.000">Reservar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="design-card reveal reveal-delay-1" data-design="Diseño 5" data-style="Flash" data-price="$250.000">
+                        <div class="media-accent-line media-accent-line--tr" aria-hidden="true"></div>
+                        <div class="design-card-img"><img src="diseños/optimized/IMG_1931.jpg" alt="Diseño flash" loading="lazy"></div>
+                        <div class="design-card-body">
+                            <span class="design-tag">Flash</span>
+                            <h3 class="design-name">Diseño Disponble 5</h3>
+                            <p class="design-desc">Diseño exclusivo listo para tatuar.</p>
+                            <div class="design-footer">
+                                <span class="design-price">$250.000</span>
+                                <button class="btn btn-primary btn-reserve-design" data-design="Diseño Disponible 5" data-style="Flash" data-price="$250.000">Reservar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="design-card reveal reveal-delay-2" data-design="Diseño 6" data-style="Flash" data-price="$200.000">
+                        <div class="media-accent-line media-accent-line--tr" aria-hidden="true"></div>
+                        <div class="design-card-img"><img src="diseños/optimized/IMG_1933.jpg" alt="Diseño flash" loading="lazy"></div>
+                        <div class="design-card-body">
+                            <span class="design-tag">Flash</span>
+                            <h3 class="design-name">Diseño Disponble 6</h3>
+                            <p class="design-desc">Diseño exclusivo listo para tatuar.</p>
+                            <div class="design-footer">
+                                <span class="design-price">$200.000</span>
+                                <button class="btn btn-primary btn-reserve-design" data-design="Diseño Disponible 6" data-style="Flash" data-price="$200.000">Reservar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+                <div class="view-all-container text-center reveal reveal-delay-2" style="margin-top: 3rem;">
+                    <button class="btn btn-secondary btn-view-all" data-gallery="disenos">Ver todos los diseños</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Calificaciones -->
+        <section id="reviews" class="section section-alt">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="eyebrow">Testimonios</span>
+                    <h2 class="section-title">Calificaciones</h2>
+                    <p class="section-subtitle">Lo que dicen quienes ya llevan mi trabajo en la piel</p>
+                </div>
+                <div class="reviews-grid">
+                    <div class="review-card reveal">
+                        <div class="review-content">
+                            <p>"Increíble experiencia. Uriel tiene una técnica impecable y se nota que sabe lo que hace. Sus 15 años de trayectoria se reflejan en cada tatuaje. El diseño personalizado superó mis expectativas."</p>
+                        </div>
+                        <div class="review-author">
+                            <span class="author-name">Carlos Mendoza</span>
+                            <span class="author-info">Realismo</span>
+                        </div>
+                    </div>
+                    <div class="review-card reveal reveal-delay-1">
+                        <div class="review-content">
+                            <p>"Buscaba a alguien que entendiera mi idea desde cero y Uriel fue súper paciente. Me ayudó a construir el diseño y el resultado final es una pieza de arte única. Muy profesional y el estudio es muy lindo."</p>
+                        </div>
+                        <div class="review-author">
+                            <span class="author-name">Valentina Rojas</span>
+                            <span class="author-info">Black And Grey</span>
+                        </div>
+                    </div>
+                    <div class="review-card reveal reveal-delay-2">
+                        <div class="review-content">
+                            <p>"Llevo varios tatuajes con él y la cicatrización ha sido impecable, sin maltrato en la piel en ningún momento. Un artista comprometido de principio a fin. Totalmente recomendado si buscas calidad y creatividad."</p>
+                        </div>
+                        <div class="review-author">
+                            <span class="author-name">Andrés Poblete</span>
+                            <span class="author-info">Blackwork Geométrico</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Proceso de reserva -->
+        <section id="booking-process" class="section">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="eyebrow">El Camino</span>
+                    <h2 class="section-title">Proceso de reserva</h2>
+                    <p class="section-subtitle">Simple y sin complicaciones</p>
+                </div>
+                <div class="process-steps">
+                    <div class="step-card reveal">
+                        <div class="media-accent-line media-accent-line--bl" aria-hidden="true"></div>
+                        <span class="step-number">01</span>
+                        <div class="step-content">
+                            <h3 class="step-title">Envío de solicitud</h3>
+                            <p class="step-description">El primer paso es ponerte en contacto y enviar tu idea de tatuaje. Puedes incluir referencias visuales, tamaño aproximado y zona del cuerpo.</p>
+                        </div>
+                    </div>
+                    <div class="step-card reveal reveal-delay-1">
+                        <div class="media-accent-line media-accent-line--bl" aria-hidden="true"></div>
+                        <span class="step-number">02</span>
+                        <div class="step-content">
+                            <h3 class="step-title">Elección de fecha</h3>
+                            <p class="step-description">Una vez aprobado el presupuesto, coordinamos directamente la fecha disponible que mejor se adapte a tu agenda.</p>
+                        </div>
+                    </div>
+                    <div class="step-card reveal reveal-delay-2">
+                        <div class="media-accent-line media-accent-line--bl" aria-hidden="true"></div>
+                        <span class="step-number">03</span>
+                        <div class="step-content">
+                            <h3 class="step-title">Confirmación de reserva</h3>
+                            <p class="step-description">Para asegurar tu cita se solicita un abono del 30% vía transferencia. Puedes enviar el comprobante a nuestro correo.</p>
+                            <span class="step-note">(Se descuenta del valor total el día de la sesión.)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. FAQ -->
+        <section id="faq" class="section section-alt">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="eyebrow">Ayuda</span>
+                    <h2 class="section-title">Preguntas Frecuentes</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-column">
+                        <details class="faq-item reveal">
+                            <summary>1. ¿Duele tatuarse?</summary>
+                            <div class="faq-answer">Sí, pero el dolor varía según la zona del cuerpo y la tolerancia de cada persona. La mayoría lo describe como una molestia soportable.</div>
+                        </details>
+                        <details class="faq-item reveal reveal-delay-1">
+                            <summary>2. ¿Cómo debo prepararme antes de mi cita?</summary>
+                            <div class="faq-answer">Ven bien descansado, hidratado y habiendo comido. Evita alcohol o drogas al menos 24 horas antes.</div>
+                        </details>
+                        <details class="faq-item reveal reveal-delay-2">
+                            <summary>3. ¿Cuánto tiempo tarda en sanar un tatuaje?</summary>
+                            <div class="faq-answer">La cicatrización toma entre 2 y 3 semanas.</div>
+                        </details>
+                        <details class="faq-item reveal">
+                            <summary>4. ¿Cómo debo cuidar mi tatuaje recién hecho?</summary>
+                            <div class="faq-answer">Mantener limpio, hidratar con la crema recomendada y evitar sol, piscina y mar durante el proceso de cicatrización.</div>
+                        </details>
+                        <details class="faq-item reveal reveal-delay-1">
+                            <summary>5. ¿Puedo llevar una referencia o idea de diseño?</summary>
+                            <div class="faq-answer">Sí. Las referencias ayudan a entender tu idea, pero el diseño final se adapta para crear una pieza única.</div>
+                        </details>
+                    </div>
+
+                    <div class="faq-column">
+                        <details class="faq-item reveal reveal-delay-2">
+                            <summary>6. ¿Cuánto cuesta un tatuaje?</summary>
+                            <div class="faq-answer">El precio depende del tamaño, nivel de detalle, ubicación y tiempo de trabajo. Cada proyecto se cotiza de forma personalizada.</div>
+                        </details>
+                        <details class="faq-item reveal">
+                            <summary>7. ¿Se puede usar anestesia para tatuarse?</summary>
+                            <div class="faq-answer">En general no es necesario. La mayoría de las personas tolera bien el proceso sin anestesia.</div>
+                        </details>
+                        <details class="faq-item reveal reveal-delay-1">
+                            <summary>8. ¿Qué zonas duelen más al tatuarse?</summary>
+                            <div class="faq-answer">Zonas cercanas al hueso o con piel más delgada suelen ser más sensibles, como costillas, cuello o pies.</div>
+                        </details>
+                        <details class="faq-item reveal reveal-delay-2">
+                            <summary>9. ¿Puedo hacer ejercicio después de tatuarme?</summary>
+                            <div class="faq-answer">Se recomienda evitar ejercicio intenso durante los primeros días para evitar irritación o infecciones.</div>
+                        </details>
+                        <details class="faq-item reveal">
+                            <summary>10. ¿Qué pasa si no sigo los cuidados posteriores?</summary>
+                            <div class="faq-answer">El tatuaje puede cicatrizar mal, perder color o incluso infectarse. El cuidado posterior es parte fundamental del resultado final.</div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Formulario de reserva -->
+        <section id="booking-form" class="section booking-section">
+            <div class="container">
+                <div class="form-wrapper">
+                    <div class="section-header text-center reveal">
+                        <span class="eyebrow">Solicita tu cita</span>
+                        <h2 class="section-title">Reserva tu cita</h2>
+                        <p class="section-subtitle">Completa el formulario y me pondré en contacto contigo en menos de 24 horas.</p>
+                    </div>
+
+                    <!-- Selected Design Banner -->
+                    <div id="design-selected-banner" class="design-selected-banner" style="display: none;">
+                        <div class="dsb-inner">
+                            <div>
+                                <span class="dsb-label">Diseño seleccionado</span>
+                                <span class="dsb-name" id="dsb-name"></span>
+                            </div>
+                            <div class="dsb-right">
+                                <span class="dsb-price" id="dsb-price"></span>
+                                <button type="button" class="dsb-clear" id="dsb-clear" aria-label="Deseleccionar diseño">✕</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="msf-progress reveal reveal-delay-1">
+                        <div class="msf-step-indicators">
+                            <div class="msf-indicator active" data-step="1">
+                                <span class="msf-dot">1</span>
+                                <span class="msf-label">Datos personales</span>
+                            </div>
+                            <div class="msf-indicator" data-step="2">
+                                <span class="msf-dot">2</span>
+                                <span class="msf-label">Tu tatuaje</span>
+                            </div>
+                            <div class="msf-indicator" data-step="3">
+                                <span class="msf-dot">3</span>
+                                <span class="msf-label">Referencias</span>
+                            </div>
+                        </div>
+                        <div class="msf-bar">
+                            <div class="msf-bar-fill" style="width: 33.33%"></div>
+                        </div>
+                    </div>
+
+                    <form id="appointment-form" class="booking-form reveal reveal-delay-2" novalidate>
+
+                        <!-- Step 1: Personal Info -->
+                        <div class="msf-panel active" data-panel="1">
+                            <div class="form-group">
+                                <label for="fullname">Nombre completo <span class="required">*</span></label>
+                                <input type="text" id="fullname" name="fullname" placeholder="Ej: María López" required>
+                                <span class="field-error" data-for="fullname"></span>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                                    <span class="field-error" data-for="email"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Teléfono <span class="required">*</span></label>
+                                    <input type="tel" id="phone" name="phone" placeholder="+56 9 1234 5678" required>
+                                    <span class="field-error" data-for="phone"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Tattoo Details -->
+                        <div class="msf-panel" data-panel="2">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="bodyzone">Ubicación exacta <span class="required">*</span></label>
+                                    <select id="bodyzone" name="bodyzone" required>
+                                        <option value="" disabled selected>Selecciona una zona</option>
+                                        <option value="brazo">Brazo / Antebrazo</option>
+                                        <option value="pierna">Pierna / Muslo</option>
+                                        <option value="espalda">Espalda / Hombros</option>
+                                        <option value="pecho">Pecho / Costillas</option>
+                                        <option value="cuello">Cuello / Cabeza</option>
+                                        <option value="mano">Mano / Muñeca</option>
+                                        <option value="tobillo">Tobillo / Pie</option>
+                                        <option value="otro">Otro (especificar en descripción)</option>
+                                    </select>
+                                    <span class="field-error" data-for="bodyzone"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="size">Tamaño aproximado (cm)</label>
+                                    <input type="text" id="size" name="size" placeholder="Ej: 10x15 cm">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="style">Estilo de tatuaje</label>
+                                    <select id="style" name="style">
+                                        <option value="" disabled selected>Selecciona un estilo</option>
+                                        <option value="realismo">Realismo</option>
+                                        <option value="blackwork">Blackwork</option>
+                                        <option value="fine-line">Fine Line</option>
+                                        <option value="geometrico">Geométrico</option>
+                                        <option value="tradicional">Tradicional</option>
+                                        <option value="neo-tradicional">Neo Tradicional</option>
+                                        <option value="acuarela">Acuarela</option>
+                                        <option value="lettering">Lettering</option>
+                                        <option value="otro">Otro / No estoy seguro</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="budget">Presupuesto estimado</label>
+                                    <select id="budget" name="budget">
+                                        <option value="" disabled selected>Selecciona un rango</option>
+                                        <option value="50-100">$50.000 – $100.000</option>
+                                        <option value="100-200">$100.000 – $200.000</option>
+                                        <option value="200-400">$200.000 – $400.000</option>
+                                        <option value="400+">$400.000+</option>
+                                        <option value="consultar">Prefiero consultarlo</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Descripción de la idea <span class="required">*</span></label>
+                                <textarea id="description" name="description" rows="4" placeholder="Cuéntame en detalle qué tienes en mente: tema, elementos, significado, referencias de estilo…" required></textarea>
+                                <span class="field-error" data-for="description"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Disponibilidad</label>
+                                <div class="checkbox-group">
+                                    <label class="check-label"><input type="checkbox" name="availability" value="lun-mie"><span class="custom-check"></span><span>Lun – Mié</span></label>
+                                    <label class="check-label"><input type="checkbox" name="availability" value="jue-vie"><span class="custom-check"></span><span>Jue – Vie</span></label>
+                                    <label class="check-label"><input type="checkbox" name="availability" value="sabado"><span class="custom-check"></span><span>Sábado</span></label>
+                                    <label class="check-label"><input type="checkbox" name="availability" value="flexible"><span class="custom-check"></span><span>Flexible</span></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Upload & Confirm -->
+                        <div class="msf-panel" data-panel="3">
+                            <div class="form-group">
+                                <label>Imágenes de referencia <span class="optional">(opcional)</span></label>
+                                <div class="upload-zone" id="upload-zone">
+                                    <input type="file" id="ref-images" name="ref-images" multiple accept="image/*" class="upload-input">
+                                    <div class="upload-content">
+                                        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                                        <p class="upload-text">Arrastra imágenes aquí o <span>haz clic para subir</span></p>
+                                        <p class="upload-hint">JPG, PNG o WEBP · Máx. 5MB cada una</p>
+                                    </div>
+                                </div>
+                                <div class="upload-preview" id="upload-preview"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="extra-inquiry">Consultas o dudas adicionales <span class="optional">(opcional)</span></label>
+                                <textarea id="extra-inquiry" name="extra-inquiry" rows="3" placeholder="¿Tienes alguna duda específica sobre el proceso, cuidado o el diseño?"></textarea>
+                            </div>
+                            <div class="form-group terms-group">
+                                <label class="check-label terms-check">
+                                    <input type="checkbox" id="terms" name="terms" required><span class="custom-check"></span>
+                                    <span>Acepto que mis datos serán utilizados para gestionar la reserva y que Uriel Tattoo me contacte. <span class="required">*</span></span>
+                                </label>
+                                <span class="field-error" data-for="terms"></span>
+                            </div>
+                        </div>
+
+                        <!-- Navigation -->
+                        <div class="msf-nav">
+                            <button type="button" class="btn btn-secondary msf-prev" style="visibility: hidden;">Anterior</button>
+                            <button type="button" class="btn btn-primary msf-next">Siguiente</button>
+                            <button type="submit" class="btn btn-primary msf-submit" style="display: none;">Enviar solicitud</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 8. Ubicación -->
+        <section id="location" class="section">
+            <div class="container">
+                <h2 class="section-title">Ubicación</h2>
+                <div class="location-grid">
+                    <div class="map-container reveal">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.1558273665516!2d-70.65581332431713!3d-33.445214773391854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c507204423ab%3A0x6a05e32049e295!2sValent%C3%ADn%20Letelier%201373%2C%208340579%20Santiago%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1712758400000!5m2!1ses!2scl" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="location-details reveal reveal-delay-1">
+                        <div class="location-info-item">
+                            <span class="info-label">Dirección</span>
+                            <p><strong>Valentín Letelier 1373</strong></p>
+                            <p>Oficina 702, Santiago Centro</p>
+                        </div>
+                        <div class="location-info-item">
+                            <span class="info-label">Referencia</span>
+                            <p>A pasos de <strong>Metro Moneda</strong></p>
+                        </div>
+                        <div class="location-info-item">
+                            <span class="info-label">Horario</span>
+                            <p>Lunes a Sábado</p>
+                            <p>11:00 AM – 18:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 9. Footer -->
+    <footer id="main-footer" class="footer-horizontal">
+        <div class="container">
+            <div class="footer-top-row">
+                <div class="footer-legal-links">
+                    <a href="politica-cookies.html">Política de Cookies</a>
+                    <a href="politica-privacidad.html">Política de Privacidad</a>
+                    <a href="terminos-uso.html">Términos de Uso</a>
+                </div>
+                <div class="footer-social-icons">
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="#" aria-label="X (Twitter)">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="23" height="23"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-center-row">
+                <p><img src="logo.png" alt="Logo" class="footer-logo-img"> &copy; 2026 Uriel Tattoo | Desarrollado por <strong style="color:var(--text);">Integra Cloud</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Individual Lightbox Overlay -->
+    <div id="lightbox-overlay" class="lightbox-overlay" aria-hidden="true">
+        <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+        <div class="lightbox-content">
+            <div id="lightbox-media-container">
+                <!-- Media injected here via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Global Modal / Lightbox -->
+    <div id="media-modal" class="media-modal" aria-hidden="true">
+        <button class="modal-close" aria-label="Cerrar modal">&times;</button>
+        <div class="modal-content">
+            <h2 id="modal-title" class="modal-title"></h2>
+            <div id="modal-gallery" class="modal-gallery">
+                <!-- Media injected here via JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("_G714NUKQD1e--o-X");
+        })();
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>
