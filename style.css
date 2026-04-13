@@ -331,7 +331,7 @@ nav ul li a:hover::after { width: 100%; }
     align-items: center;
     overflow: hidden;
     background: var(--bg);
-    scroll-margin-top: calc(var(--header-h) + 2rem);
+    scroll-margin-top: 150px !important;
 }
 
 /* Subtle radial ambient glow behind content */
@@ -1721,7 +1721,7 @@ nav ul li a:hover::after { width: 100%; }
     .booking-form { padding: 2rem 1.5rem; }
     .portfolio-grid { grid-template-columns: 1fr; }
     .designs-grid { gap: 1.5rem; }
-    .hero-video { display: none; }
+    .hero-video { display: none !important; }
 }
 
 @media (max-width: 480px) {
