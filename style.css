@@ -1719,7 +1719,24 @@ nav ul li a:hover::after { width: 100%; }
 
     .form-row { grid-template-columns: 1fr; }
     .booking-form { padding: 2rem 1.5rem; }
-    .portfolio-grid { grid-template-columns: 1fr; }
+    .portfolio-grid { 
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        gap: 1.5rem;
+        padding: 1rem 0.5rem;
+        margin: 0 -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .portfolio-grid::-webkit-scrollbar { display: none; }
+    .portfolio-item {
+        flex: 0 0 clamp(250px, 70vw, 300px);
+        scroll-snap-align: center;
+    }
     .designs-grid { gap: 1.5rem; }
     .hero-video { display: none !important; }
 }
