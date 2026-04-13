@@ -7,6 +7,14 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Prevent scroll restoration and scroll to top on load
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.addEventListener('load', () => {
+        window.scrollTo(0, 0);
+    });
+
     // ─── Mobile Navigation Toggle ──────────────────────────────
     const navToggle = document.querySelector('.mobile-nav-toggle');
     const primaryNav = document.querySelector('#navbar');
@@ -25,6 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
             primaryNav?.setAttribute('data-visible', 'false');
             navToggle?.setAttribute('aria-expanded', 'false');
         });
+    });
+
+    // Close nav on click outside
+    document.addEventListener('click', (e) => {
+        if (primaryNav && navToggle && primaryNav.getAttribute('data-visible') === 'true') {
+            if (!primaryNav.contains(e.target) && !navToggle.contains(e.target)) {
+                primaryNav.setAttribute('data-visible', 'false');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        }
     });
 
     // ─── Sticky Header: class on scroll ────────────────────────
