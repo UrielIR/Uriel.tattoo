@@ -53,7 +53,11 @@
    RESET
    ============================================ */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-h);
+    font-size: 16px;
+}
 body {
     font-family: var(--font-body);
     background-color: var(--bg);
@@ -327,6 +331,7 @@ nav ul li a:hover::after { width: 100%; }
     align-items: center;
     overflow: hidden;
     background: var(--bg);
+    scroll-margin-top: calc(var(--header-h) + 2rem);
 }
 
 /* Subtle radial ambient glow behind content */
@@ -1716,6 +1721,7 @@ nav ul li a:hover::after { width: 100%; }
     .booking-form { padding: 2rem 1.5rem; }
     .portfolio-grid { grid-template-columns: 1fr; }
     .designs-grid { gap: 1.5rem; }
+    .hero-video { display: none; }
 }
 
 @media (max-width: 480px) {
