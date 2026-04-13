@@ -656,7 +656,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ─── Cursor Glow Effect ─────────────────────────────────────
     const glow = document.getElementById('cursor-glow');
-    if (glow) {
+    if (glow && window.innerWidth > 768) {
         window.addEventListener('mousemove', (e) => {
             const x = e.clientX;
             const y = e.clientY;
