@@ -499,6 +499,7 @@ nav ul li a:hover::after { width: 100%; }
     padding-right: 1rem;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    flex-wrap: nowrap;
     cursor: grab;
 }
 
@@ -515,6 +516,8 @@ nav ul li a:hover::after { width: 100%; }
 .portfolio-item {
     position: relative;
     aspect-ratio: 3 / 4;
+    flex: 0 0 clamp(280px, 25vw, 350px);
+    flex-shrink: 0;
     background: var(--surface);
     cursor: pointer;
     border-radius: 24px;

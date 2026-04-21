@@ -470,10 +470,12 @@ document.addEventListener('DOMContentLoaded', () => {
         gallery.items.forEach((item, index) => {
             let el;
             
-            if (galleryId === 'disenos') {
+            if (galleryId === 'disenos' || galleryId === 'fotos') {
+                const isDesign = galleryId === 'disenos';
                 el = document.createElement('article');
-                el.className = 'design-card';
-                // Adjust inline styles slightly to ensure it looks good in the modal grid
+                el.className = isDesign ? 'design-card' : 'design-card portfolio-card';
+                
+                // Consistency styles
                 el.style.display = 'flex';
                 el.style.flexDirection = 'column';
                 el.style.height = '100%';
@@ -481,8 +483,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.innerHTML = `
                     <div class="media-accent-line media-accent-line--tr" aria-hidden="true"></div>
                     <div class="design-card-img" style="flex-grow: 1; display:flex; align-items:center; justify-content:center;">
-                        <img src="${item.src}" alt="Diseño flash" loading="lazy" style="max-height: 250px; object-fit: contain;">
+                        <img src="${item.src}" alt="${isDesign ? 'Diseño flash' : 'Portafolio'}" loading="lazy" style="max-height: 250px; object-fit: contain;">
                     </div>
+                    ${isDesign ? `
                     <div class="design-card-body">
                         <span class="design-tag">Flash</span>
                         <h3 class="design-name">Diseño Disponible ${index + 1}</h3>
@@ -492,13 +495,15 @@ document.addEventListener('DOMContentLoaded', () => {
                             <a href="${item.mpLink || '#'}" target="_blank" class="btn btn-primary btn-reserve-design" data-mplink="${item.mpLink || '#'}">Comprar Ahora</a>
                         </div>
                     </div>
+                    ` : ''}
                 `;
 
-                // Add lightbox listener to the image only
-                const img = el.querySelector('img');
-                img.style.cursor = 'zoom-in';
-                img.addEventListener('click', (e) => {
-                    e.stopPropagation();
+                // Add lightbox listener to the entire card
+                el.style.cursor = 'zoom-in';
+                el.addEventListener('click', (e) => {
+                    const btn = e.target.closest('.btn-reserve-design');
+                    if (btn) return; // Don't open lightbox if clicking the payment button
+                    
                     openLightbox(item.src, 'img', item.price, item.mpLink);
                 });
             } else if (item.type === 'video') {
@@ -691,6 +696,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.querySelectorAll('.portfolio-item').forEach(item => {
+        item.style.cursor = 'zoom-in';
         item.addEventListener('click', (e) => {
             const img = item.querySelector('img');
             if (img) openLightbox(img.src, 'img');
@@ -699,10 +705,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Landing page design items with price
     document.querySelectorAll('.design-card').forEach(item => {
+        item.style.cursor = 'zoom-in';
         item.addEventListener('click', (e) => {
+            const btn = e.target.closest('.btn-reserve-design');
+            if (btn) return; // Allow payment redirect
+
             const img = item.querySelector('img');
             const price = item.dataset.price;
-            if (img) openLightbox(img.src, 'img', price);
+            const mpLink = item.querySelector('.btn-reserve-design')?.dataset.mplink;
+            if (img) openLightbox(img.src, 'img', price, mpLink);
         });
     });
 
