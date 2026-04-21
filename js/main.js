@@ -513,9 +513,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.muted = true;
                 el.playsInline = true;
                 el.loop = true;
-                el.autoplay = true;
+                el.autoplay = false;
 
                 el.style.cursor = 'zoom-in';
+
+                // Hover-to-Play
+                el.addEventListener('mouseenter', () => {
+                    const playPromise = el.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(() => { /* Auto-play prevented */ });
+                    }
+                });
+                el.addEventListener('mouseleave', () => el.pause());
+
                 el.addEventListener('click', (e) => {
                     e.stopPropagation();
                     openLightbox(item.src, item.type, item.price, item.mpLink);
@@ -686,6 +696,28 @@ document.addEventListener('DOMContentLoaded', () => {
              glow.style.opacity = '1';
         });
     }
+
+    // ─── Hover-to-Play for Featured Videos ──────────────────────
+    function setupHoverVideos() {
+        const videoItems = document.querySelectorAll('.video-item');
+        videoItems.forEach(item => {
+            const video = item.querySelector('video');
+            if (!video) return;
+
+            item.addEventListener('mouseenter', () => {
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(() => { /* Auto-play was prevented */ });
+                }
+            });
+
+            item.addEventListener('mouseleave', () => {
+                video.pause();
+                // Optionally reset to start: video.currentTime = 0;
+            });
+        });
+    }
+    setupHoverVideos();
 
     // Single items click - Now open Lightbox instead of Full Gallery
     document.querySelectorAll('.video-item').forEach(item => {
