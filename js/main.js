@@ -708,30 +708,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle hash on load - Removed to prevent auto-scroll on page reload
 
-    // ─── Auto-scrolling Designs Carousel (Improved & Finite) ──────
-    const designsGrid = document.querySelector('.designs-grid');
-    if (designsGrid) {
-        // No duplication here to maintain hard boundaries and avoid empty space
+    // ─── Reusable Auto-scrolling Carousel Component ─────────────
+    function setupAutoCarousel(containerSelector, speed = 1.0) {
+        const container = document.querySelector(containerSelector);
+        if (!container) return;
 
-        // 1. Re-attach event listeners to items
-        function attachItemListeners() {
-            document.querySelectorAll('.design-card').forEach(item => {
-                item.onclick = (e) => {
-                    const btn = e.target.closest('.btn-reserve-design');
-                    if (btn) return; 
-
-                    const img = item.querySelector('img');
-                    const price = item.dataset.price;
-                    const mpLink = item.querySelector('.btn-reserve-design')?.dataset.mplink;
-                    if (img) openLightbox(img.src, 'img', price, mpLink);
-                };
-            });
-        }
-        attachItemListeners();
-
-        // 2. Variables for state management
-        let speed = 1.0; 
-        let scrollPos = designsGrid.scrollLeft; // Store fractional position
+        // Variables for state management
+        let scrollPos = container.scrollLeft; 
         let isMoving = true;
         let isDragging = false;
         let isResetting = false; 
@@ -739,23 +722,22 @@ document.addEventListener('DOMContentLoaded', () => {
         let animationId;
         let resumeTimeout;
 
-        // 3. Auto-scroll Function
+        // 1. Auto-scroll Function
         function autoScroll() {
             if (isMoving && !isDragging && !isResetting) {
-                const maxScroll = designsGrid.scrollWidth - designsGrid.clientWidth;
+                const maxScroll = container.scrollWidth - container.clientWidth;
                 
                 if (maxScroll > 0) {
                     scrollPos += speed;
-                    designsGrid.scrollLeft = scrollPos;
+                    container.scrollLeft = scrollPos;
 
-                    // If the browser truncated the value, we keep the fraction in scrollPos
-                    // But we also need to handle manual scroll interference
-                    if (Math.abs(designsGrid.scrollLeft - scrollPos) > speed + 1) {
-                        scrollPos = designsGrid.scrollLeft;
+                    // Manual scroll interference detection
+                    if (Math.abs(container.scrollLeft - scrollPos) > speed + 1) {
+                        scrollPos = container.scrollLeft;
                     }
 
-                    // Check if we've reached the end
-                    if (designsGrid.scrollLeft >= maxScroll - 1) {
+                    // Loop behavior: Smooth reset when reaching the end
+                    if (container.scrollLeft >= maxScroll - 1) {
                         handleScrollReset();
                     }
                 }
@@ -763,27 +745,19 @@ document.addEventListener('DOMContentLoaded', () => {
             animationId = requestAnimationFrame(autoScroll);
         }
 
-        // 4. Smooth Reset Logic
+        // 2. Smooth Reset Logic
         function handleScrollReset() {
             isResetting = true;
-            
-            // Pause at the end for a moment
             setTimeout(() => {
-                // Smoothly scroll back to start
-                designsGrid.scrollTo({
-                    left: 0,
-                    behavior: 'smooth'
-                });
-
-                // Wait for the smooth scroll to finish before resuming
+                container.scrollTo({ left: 0, behavior: 'smooth' });
                 setTimeout(() => {
-                    scrollPos = 0; // Sync our internal variable
+                    scrollPos = 0;
                     isResetting = false;
                 }, 1000); 
             }, 1000); 
         }
 
-        // 5. Interaction Handling (Pause/Resume)
+        // 3. Interaction Handling
         const pauseAutoScroll = () => {
             isMoving = false;
             if (resumeTimeout) clearTimeout(resumeTimeout);
@@ -793,51 +767,59 @@ document.addEventListener('DOMContentLoaded', () => {
             if (resumeTimeout) clearTimeout(resumeTimeout);
             resumeTimeout = setTimeout(() => {
                 isMoving = true;
-                scrollPos = designsGrid.scrollLeft; 
-            }, 500); // More aggressive resume (500ms)
+                scrollPos = container.scrollLeft; 
+            }, 800);
         };
 
         // Event Listeners
-        designsGrid.addEventListener('mouseenter', pauseAutoScroll);
-        designsGrid.addEventListener('mouseleave', resumeAutoScroll);
-        designsGrid.addEventListener('touchstart', pauseAutoScroll, { passive: true });
-        designsGrid.addEventListener('touchend', resumeAutoScroll, { passive: true });
-        designsGrid.addEventListener('wheel', () => {
+        container.addEventListener('mouseenter', pauseAutoScroll);
+        container.addEventListener('mouseleave', resumeAutoScroll);
+        container.addEventListener('touchstart', pauseAutoScroll, { passive: true });
+        container.addEventListener('touchend', resumeAutoScroll, { passive: true });
+        container.addEventListener('wheel', () => {
             pauseAutoScroll();
             resumeAutoScroll();
         }, { passive: true });
 
-        // 6. Drag-to-Scroll (Desktop)
-        designsGrid.addEventListener('mousedown', (e) => {
+        // 4. Drag-to-Scroll
+        container.addEventListener('mousedown', (e) => {
             isDragging = true;
-            designsGrid.classList.add('is-dragging');
-            startX = e.pageX - designsGrid.offsetLeft;
-            scrollLeft = designsGrid.scrollLeft;
+            container.classList.add('is-dragging');
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
             pauseAutoScroll();
         });
 
         window.addEventListener('mouseup', () => {
             if (!isDragging) return;
             isDragging = false;
-            designsGrid.classList.remove('is-dragging');
+            container.classList.remove('is-dragging');
             resumeAutoScroll();
         });
 
-        designsGrid.addEventListener('mousemove', (e) => {
+        container.addEventListener('mousemove', (e) => {
             if (!isDragging) return;
             e.preventDefault();
-            const x = e.pageX - designsGrid.offsetLeft;
+            const x = e.pageX - container.offsetLeft;
             const walk = (x - startX) * 2; 
-            designsGrid.scrollLeft = scrollLeft - walk;
+            container.scrollLeft = scrollLeft - walk;
         });
 
-        // Initialize
+        // Start
         autoScroll();
 
-        // Cleanup
+        // Cleanup on navigate
         window.addEventListener('beforeunload', () => {
             if (animationId) cancelAnimationFrame(animationId);
         });
     }
+
+    // Initialize Carousels
+    function initCarousels() {
+        setupAutoCarousel('.designs-grid', 1.0);
+        setupAutoCarousel('.portfolio-grid', 0.8); // Slightly slower for portfolio
+    }
+
+    initCarousels();
 
 });

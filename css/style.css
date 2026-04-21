@@ -488,11 +488,28 @@ nav ul li a:hover::after { width: 100%; }
 #about { background-color: var(--bg-2); }
 
 .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    background: transparent;
-    padding: 1rem 0;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+    gap: 2rem;
+    padding: 2.5rem 0.5rem;
+    margin: 0 -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    cursor: grab;
+}
+
+.portfolio-grid:active {
+    cursor: grabbing;
+}
+
+.portfolio-grid.is-dragging {
+    cursor: grabbing;
+    user-select: none;
+    scroll-behavior: auto;
 }
 
 .portfolio-item {
@@ -1730,17 +1747,8 @@ nav ul li a:hover::after { width: 100%; }
     .form-row { grid-template-columns: 1fr; }
     .booking-form { padding: 2rem 1.5rem; }
     .portfolio-grid { 
-        display: flex;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        scroll-snap-type: x mandatory;
+        padding: 1.5rem 0.5rem;
         gap: 1.5rem;
-        padding: 1rem 0.5rem;
-        margin: 0 -1rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
     }
     .portfolio-grid::-webkit-scrollbar { display: none; }
     .portfolio-item {
@@ -1991,8 +1999,7 @@ nav ul li a:hover::after { width: 100%; }
 /* Portfolio Mobile Adjustment */
 @media (max-width: 768px) {
     .portfolio-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        padding: 0 1rem;
+        gap: 1.5rem;
+        padding: 1rem 0.5rem;
     }
 }
